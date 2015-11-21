@@ -8,20 +8,20 @@
     		@$this->db = new mysqli($dbInfo[0], $dbInfo[1], $dbInfo[2], $dbInfo[3]);
     	}
 		
-    	function queryWidgets($sectionId) {
-    		$widgetsQuery = "select * from tblWidgets where PageID=".$_GET['page']." and SectionID=".$sectionId.";";
+    	function queryWidgets($query) {
+    		$widgetsQuery = "select * from tblWidgets where ".$query;
 			$widgetsQueryResult = $this->db->query($widgetsQuery);
 			return $widgetsQueryResult;
     	}
 		
-    	function querySections($page) {
-    		$sectionsQuery = "select * from tblSections where PageID=".$page.";";
+    	function querySections($query) {
+    		$sectionsQuery = "select * from tblSections where ".$query;
 			$sectionsQueryResult = $this->db->query($sectionsQuery);
 			return $sectionsQueryResult;
     	}
 		
-		function queryPages($parent) {
-			$pagesQuery = 'select * from tblPages where ParentPage='.$parent.';';
+		function queryPages($query) {
+			$pagesQuery = "select * from tblPages where ".$query;
 			$pagesQueryResult = $this->db->query($pagesQuery);
 			return $pagesQueryResult;
 		}

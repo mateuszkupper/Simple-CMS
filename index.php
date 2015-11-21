@@ -6,6 +6,6 @@
 
 	$page = new page();
 	$page->includeHeader();	
-	$page->renderSections($page->database->querySections($_GET['page']));
+	$page->renderSections($page->database->querySections("PageID=".$_GET['page'].";"));
 	$page->includeFooter();
 ?>

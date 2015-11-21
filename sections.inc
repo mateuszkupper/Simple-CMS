@@ -11,7 +11,7 @@
 		private $widgetsData;		
 		private $singleWidgetData;
 		private $widget;
-		private $databaseSections;
+		private $database;
 		
 		
 		function __construct($asectionId, $apageId, $asectionPath, $asectionContent,
@@ -23,7 +23,7 @@
 			$this->sectionConfig = $asectionConfig;
 			$this->sectionStyle = $asectionStyle;
 
-			$this->databaseSections = new database();		
+			$this->database = new database();		
 			include($_SERVER['DOCUMENT_ROOT']."/CMS2".$this->sectionPath); //renderWidgets()
 		}
 				

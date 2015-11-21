@@ -3,7 +3,7 @@
 
     function displayChildren($parent) {
  	  $database = new database();
-        $query = $database->queryPages($parent);
+        $query = $database->queryPages("ParentPage=".$parent.";");
         echo "<ul>";
         while ($row = $query->fetch_assoc()) { 
             echo "<li>".$row['Name']."</li>"; 

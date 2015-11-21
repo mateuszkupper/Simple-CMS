@@ -1,6 +1,6 @@
 <div>
 sections
 	<?php
-		$this->renderWidgets($this->databaseSections->queryWidgets($this->sectionId));
+		$this->renderWidgets($this->database->queryWidgets("PageID=".$_GET['page']." and SectionID=".$this->sectionId.";"));
 	?>
-</div>
+</div> 
