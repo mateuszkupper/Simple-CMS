@@ -34,8 +34,6 @@
         for($i=0; $i<$howManySectionsFound; $i++) {             
             $singleSectionData = $asectionsData->fetch_assoc();
             
-            //display widget's style for each section
-            //jdo
             $awidgetsData = $database->queryWidgets($singleSectionData['SectionID']);
             $howManyWidgetsFound = $awidgetsData->num_rows;
             for($i=0; $i<$howManyWidgetsFound; $i++) {
@@ -46,9 +44,11 @@
     }
     
     function displayPageStyle() {
-        //query one page
-        //fetch data
-        //count how many
-        //display
+        $database = new database();
+        
+        $pageQuery = 'select * from tblPages where PageID='.$_GET['page'].';';
+        $pageQueryResult = $database->db->query($pagesQuery);
+        $singlePageData = $pageQueryResult->fetch_assoc();
+        echo $singlePageData['Style'];
     }
 ?>

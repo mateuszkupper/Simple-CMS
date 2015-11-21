@@ -1,6 +1,6 @@
 <?php	
     class database {
-    	private $db;
+    	public $db;
 		   	
     	function __construct() {
     		$dbInfoFilePath = fopen("db.txt", 'rb');
