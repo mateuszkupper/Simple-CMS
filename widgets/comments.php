@@ -1,3 +1,3 @@
 <div>
-	Comments
+	<?php echo $this->widgetContent; ?>
 </div>

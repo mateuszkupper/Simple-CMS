@@ -23,7 +23,7 @@
 			$this->sectionConfig = $asectionConfig;
 			$this->sectionStyle = $asectionStyle;
 
-			$this->database = new database();		
+			$this->database = new database();	
 			include($_SERVER['DOCUMENT_ROOT']."/CMS2".$this->sectionPath); //renderWidgets()
 		}
 				

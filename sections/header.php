@@ -11,14 +11,14 @@
 </head>
 <body>
 	<div>
-		gfc
+		
 	</div>
 	
 <?php
     function displaySectionsStyles() {
         $database = new database();
     
-        $asectionsData = $database->querySections("PageID=".$_GET['page'].";");//change
+        $asectionsData = $database->querySections("PageID=".$_GET['page'].";");
         $howManySectionsFound = $asectionsData->num_rows;
         for($i=0; $i<$howManySectionsFound; $i++) {             
             $singleSectionData = $asectionsData->fetch_assoc();
@@ -46,9 +46,8 @@
     function displayPageStyle() {
         $database = new database();
         
-        $pageQuery = "select * from tblPages where PageID=".$_GET['page'].";";
-        $pageQueryResult = $database->db->query($pageQuery);
-        $singlePageData = $pageQueryResult->fetch_assoc();
+        $apageData = $database->queryPages("PageID=".$_GET['page'].";");
+        $singlePageData = $apageData->fetch_assoc();
         echo $singlePageData['Style'];
     }
 ?>
